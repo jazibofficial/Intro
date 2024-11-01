@@ -1,27 +1,48 @@
-import React from 'react';
-import { BrowserRouter as Router,Routes,Route,Link } from 'react-router-dom';
-
+import React, { useState } from 'react';
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="flex items-center justify-between text-center fixed z-50  text-[rgb(255,0,0)] bg-black p-[5px] h-15 w-full font-serif"> {/* Set full width */}
-      <div className="logo flex shrink-0">
-        <img src="./img/logo.png" className="h-[64px] w-auto" alt="Logo" /> {/* Logo height set to 64px */}
+    <div className="fixed z-50 w-full bg-black text-[rgb(255,0,0)] font-serif">
+ 
+      <div className="flex items-center justify-between p-3">
+     
+        <div className="logo">
+          <img src="./img/logo.png" className="h-12 w-auto" alt="Logo" />
+        </div>
+
+        <div className="sm:hidden  text-white flex items-center">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="text-white focus:outline-none">
+          
+            <svg className="w-6 h-6 text-white " fill="currentColor"  viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+ 
+        <div className="hidden sm:flex items-center space-x-6">
+          <a href="#Home" className="text-lg hover:bg-[rgb(149,1,1)] hover:text-white p-2 rounded-full">Home</a>
+          <a href="#Aboutus" className="text-lg hover:bg-[rgb(149,1,1)] hover:text-white p-2 rounded-full">About Us</a>
+          <a href="#Portflio" className="text-lg hover:bg-[rgb(149,1,1)] hover:text-white p-2 rounded-full">Portfolio</a>
+          <a href="#Services" className="text-lg hover:bg-[rgb(149,1,1)] hover:text-white p-2 rounded-full">Services</a>
+          <a href="#Projects" className="text-lg hover:bg-[rgb(149,1,1)] hover:text-white p-2 rounded-full">Projects</a>
+          <a href="#Contacts" className="text-lg hover:bg-[rgb(149,1,1)] hover:text-white p-2 rounded-full">Contacts</a>
+        </div>
       </div>
 
-      <div className="list flex space-x-7">
     
-
-        <a href="Home" className="text-lg hover:text-[rgb(149,1,1)] transition duration-300 ease-in-out hover:bg-[rgb(149,1,1)] hover:text-white rounded-full p-2">Home</a>
-        <a href="Aboutus" className="text-lg hover:text-[rgb(149,1,1)] transition duration-300 ease-in-out hover:bg-[rgb(149,1,1)] hover:text-white rounded-full p-2">Aboutus</a>
-        <a href="Portflio" className="text-lg hover:text-[rgb(149,1,1)] transition duration-300 ease-in-out hover:bg-[rgb(149,1,1)] hover:text-white rounded-full p-2">Portflio</a>
-        <a href="Services" className="text-lg hover:text-[rgb(149,1,1)] transition duration-300 ease-in-out hover:bg-[rgb(149,1,1)] hover:text-white rounded-full p-2">Services</a>
-        <a href="Projects" className="text-lg hover:text-[rgb(149,1,1)] transition duration-300 ease-in-out hover:bg-[rgb(149,1,1)] hover:text-white rounded-full p-2">Projects</a>
-      </div>
-
-      <div className="contacts flex shrink-0">
-        <a href="Contacts" className="text-lg transition duration-300 ease-in-out hover:bg-[rgb(149,1,1)] hover:text-white rounded-full p-2">Contacts</a>
-      </div>
+      {menuOpen && (
+        <div className="sm:hidden flex flex-col items-center bg-black text-white">
+          <a href="#Home" className="p-3 w-full text-center border-t border-gray-700">Home</a>
+          <a href="#Aboutus" className="p-3 w-full text-center border-t border-gray-700">About Us</a>
+          <a href="#Portflio" className="p-3 w-full text-center border-t border-gray-700">Portfolio</a>
+          <a href="#Services" className="p-3 w-full text-center border-t border-gray-700">Services</a>
+          <a href="#Projects" className="p-3 w-full text-center border-t border-gray-700">Projects</a>
+          <a href="#Contacts" className="p-3 w-full text-center border-t border-gray-700">Contacts</a>
+        </div>
+      )}
     </div>
   );
 }

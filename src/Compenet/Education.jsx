@@ -1,41 +1,41 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Import Swiper styles
-import 'swiper/css/effect-cards'; // Import specific effect styles
-import { EffectCards } from 'swiper/modules'; // Import the EffectCards module
+import 'swiper/css'; 
+import 'swiper/css/effect-cards'; 
+import { EffectCards } from 'swiper/modules'; 
 
 function Education() {
   return (
-    <div className='px-4 sm:px-6 lg:px-8 py-10'>
-      {/* Title Section */}
+    <div id='Aboutus' className='px-4 sm:px-6 lg:px-8 py-10'>
+   
       <div className="edu text-3xl sm:text-4xl lg:text-5xl flex items-center justify-center font-bold mb-10">
         <i className="fas fa-graduation-cap mr-2"></i> Self-Education
       </div>
 
-      {/* Swiper Section */}
+    
       <div className="swiper-container mx-auto max-w-lg lg:max-w-4xl">
       <Swiper
   effect="cards"
   grabCursor={true}
   modules={[EffectCards]}
   className="mySwiper"
-  slidesPerView={1} // Show one slide at a time initially
+  slidesPerView={1} 
   spaceBetween={20}
   breakpoints={{
     640: {
-      slidesPerView: 1, // 1 slide on small screens
+      slidesPerView: 1, 
       spaceBetween: 20,
     },
     768: {
-      slidesPerView: 2, // 2 slides on tablets
+      slidesPerView: 2, 
       spaceBetween: 30,
     },
     1024: {
-      slidesPerView: 3, // 3 slides on desktops
+      slidesPerView: 3, 
       spaceBetween: 40,
     },
     1440: {
-      slidesPerView: 4, // Ensure more space on larger screens (like Pro Max)
+      slidesPerView: 4, 
       spaceBetween: 50,
     },
   }}

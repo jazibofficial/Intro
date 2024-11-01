@@ -3,7 +3,7 @@ import React from 'react'
 function Skills() {
   return (
     <>
-    <div className='  relative  min-h-96  w-full bg-black mt-48'>
+    <div id='Portflio' className='  relative  min-h-96  w-full bg-black mt-48'>
 
     <div className="text flex  justify-center content-center  relative  py-10 text-center text-4xl font-bold" >
         <h1 className='text-[rgb(255,0,0)]  '>DISCOVER RANGE <br/> OF MY EXPERTIES</h1>
